@@ -3,6 +3,7 @@
 use App\Http\Controllers\lab8Controller;
 use Illuminate\Support\Facades\Route;
 use App\Models\lab8;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/', function () {
 Route::get('/blog/lab', [lab8Controller::class, 'index'])->name('refresh');
 
 Route::post('/blog/main', [lab8Controller::class, 'store'])->name('add');
+
+Route::get('/mail/send', 'App\Http\Controllers\MailController@send');
